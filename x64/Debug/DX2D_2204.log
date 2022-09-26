@@ -1,0 +1,315 @@
+﻿  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\PixelEffect.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\PixelEffectRemoveWhite.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\PixelInstancing.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\PixelMulti.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\PixelCollider.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\PixelColor.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\PixelFilter.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\PixelGrayscale.cso
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Shaders\PixelOutline.hlsl(39,22-56): warning X3570: gradient instruction used in a loop with varying iteration, attempting to unroll the loop
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Shaders\PixelOutline.hlsl(39,22-56): warning X3570: gradient instruction used in a loop with varying iteration, attempting to unroll the loop
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Shaders\PixelOutline.hlsl(39,22-56): warning X3570: gradient instruction used in a loop with varying iteration, attempting to unroll the loop
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Shaders\PixelOutline.hlsl(39,22-56): warning X3570: gradient instruction used in a loop with varying iteration, attempting to unroll the loop
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Shaders\PixelOutline.hlsl(39,22-56): warning X3570: gradient instruction used in a loop with varying iteration, attempting to unroll the loop
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\PixelOutline.cso
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Shaders\PixelOutline.hlsl(39,22-56): warning X3570: gradient instruction used in a loop with varying iteration, attempting to unroll the loop
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Shaders\PixelOutline.hlsl(39,22-56): warning X3570: gradient instruction used in a loop with varying iteration, attempting to unroll the loop
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Shaders\PixelOutline.hlsl(39,22-56): warning X3570: gradient instruction used in a loop with varying iteration, attempting to unroll the loop
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Shaders\PixelOutline.hlsl(39,22-56): warning X3570: gradient instruction used in a loop with varying iteration, attempting to unroll the loop
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Shaders\PixelOutline.hlsl(39,22-56): warning X3570: gradient instruction used in a loop with varying iteration, attempting to unroll the loop
+  
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\PixelProgressBar.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\PixelUV.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\Tutorial.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\VertexCollider.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\VertexColor.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\VertexInstancing.cso
+  compilation object save succeeded; see C:\Users\hksdo\source\repos\SGA_DX11_2D\x64\Debug\VertexUV.cso
+  Framework.cpp
+  AStar.cpp
+  AStarPlus.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Algorithm\AStarPlus.cpp(31,39): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Dijkstra.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Algorithm\Dijkstra.cpp(157,29): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  DNode.cpp
+  Heap.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Algorithm\Heap.cpp(14,32): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Algorithm\Heap.cpp(36,28): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Node.cpp
+  DX2D_2204.cpp
+  ConstBuffer.cpp
+  IndexBuffer.cpp
+  VertexBuffer.cpp
+  CircleCollider.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Collision\CircleCollider.cpp(41,89): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Collider.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Collision\Collider.cpp(34,29): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  IsometricCollider.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Collision\IsometricCollider.cpp(47,89): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(714,68): warning C4244: '인수': '_Ty'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(721): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float,int>(_Alloc &,_Objty *const ,float &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Alloc=std::allocator<VertexPos>,
+              _Ty=VertexPos,
+              _Objty=VertexPos
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(726): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float,int>(_Alloc &,_Objty *const ,float &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Alloc=std::allocator<VertexPos>,
+              _Ty=VertexPos,
+              _Objty=VertexPos
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(739): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<VertexPos,std::allocator<VertexPos>>::_Emplace_back_with_unused_capacity<_Ty,int>(_Ty &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Collision\IsometricCollider.cpp(41): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<VertexPos,std::allocator<VertexPos>>::emplace_back<float,int>(float &&,int &&)'에 대한 참조를 확인하세요.
+  LineCollider.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Collision\LineCollider.cpp(34,44): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  RectCollider.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Collision\RectCollider.cpp(84,89): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Camera.cpp
+  Environment.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Environment\Environment.cpp(43,19): warning C4244: '=': 'UINT'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Environment\Environment.cpp(44,20): warning C4244: '=': 'UINT'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Environment\Environment.cpp(56,22): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Environment\Environment.cpp(56,9): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Math.cpp
+  Transform.cpp
+  Clip.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  Frame.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Render\Frame.cpp(21,83): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Render\Frame.cpp(22,63): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Render\Frame.cpp(49,83): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Render\Frame.cpp(50,63): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Render\Frame.cpp(66,38): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  RenderTarget.cpp
+  Texture.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Render\Texture.cpp(61,66): warning C4244: '인수': 'const size_t'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Render\Texture.cpp(61,39): warning C4244: '인수': 'const size_t'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  PixelShader.cpp
+  Shader.cpp
+  VertexShader.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Shader\VertexShader.cpp(92,40): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Shader\VertexShader.cpp(107,70): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Device.cpp
+  BinaryReader.cpp
+  BinaryWriter.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Utility\BinaryWriter.cpp(39,21): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Utility\BinaryWriter.cpp(42,68): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Utility\BinaryWriter.cpp(47,21): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Utility\BinaryWriter.cpp(50,69): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  DataManager.cpp
+  Font.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Framework\Utility\Font.cpp': No such file or directory
+  Keyboard.cpp
+  Timer.cpp
+  Utility.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(2575,23): warning C4244: '인수': '_Elem'에서 'const _Elem'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Elem=wchar_t
+          ]
+          and
+          [
+              _Elem=char
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(2586): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<_Iter>(_Iter,const _Iter,std::input_iterator_tag)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Iter=wchar_t *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(2586): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<_Iter>(_Iter,const _Iter,std::input_iterator_tag)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Iter=wchar_t *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(2566): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<_Iter>(const _Iter,const _Iter,std::forward_iterator_tag)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Iter=wchar_t *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(2566): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<_Iter>(const _Iter,const _Iter,std::forward_iterator_tag)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Iter=wchar_t *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(3294): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<wchar_t*,0>(_Iter,_Iter,const _Alloc &)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Iter=wchar_t *,
+              _Alloc=std::allocator<char>
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(3294): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<wchar_t*,0>(_Iter,_Iter,const _Alloc &)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Iter=wchar_t *,
+              _Alloc=std::allocator<char>
+          ]
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Utility\Utility.cpp(39): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(const _Iter,const _Iter)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>
+          ]
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Utility\Utility.cpp(39): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(const _Iter,const _Iter)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>
+          ]
+  Xml.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Framework\Utility\Xml.cpp(2422,34): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GameManager.cpp
+  AnimObject.cpp
+  Button.cpp
+  Effect.cpp
+  EffectManager.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  IButton.cpp
+  ImageFont.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Objects\Basic\ImageFont.cpp': No such file or directory
+  InstancingTileMap.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\InstancingTileMap.cpp(8,36): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\InstancingTileMap.cpp(8,29): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\InstancingTileMap.cpp(40,96): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\InstancingTileMap.cpp(48,38): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\InstancingTileMap.cpp(48,29): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\InstancingTileMap.cpp(87,96): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\InstancingTileMap.cpp(107,58): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Isometric.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\Isometric.cpp(71,38): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\Isometric.cpp(84,83): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\Isometric.cpp(85,63): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(714,68): warning C4244: '인수': '_Ty'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(721): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float&,float&,float,int>(_Alloc &,_Objty *const ,float &,float &,float &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Alloc=std::allocator<Vertex>,
+              _Ty=Vertex,
+              _Objty=Vertex
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(726): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float&,float&,float,int>(_Alloc &,_Objty *const ,float &,float &,float &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Alloc=std::allocator<Vertex>,
+              _Ty=Vertex,
+              _Objty=Vertex
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(739): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<Vertex,std::allocator<Vertex>>::_Emplace_back_with_unused_capacity<float&,float&,_Ty,int>(float &,float &,_Ty &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=float
+          ]
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\Isometric.cpp(37): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<Vertex,std::allocator<Vertex>>::emplace_back<float&,float&,float,int>(float &,float &,float &&,int &&)'에 대한 참조를 확인하세요.
+  ProgressBar.cpp
+  Quad.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\Quad.cpp(66,38): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\Quad.cpp(98,83): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\Quad.cpp(99,63): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(714,68): warning C4244: '인수': '_Ty'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(721): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float&,float&,int,int>(_Alloc &,_Objty *const ,float &,float &,int &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Alloc=std::allocator<Vertex>,
+              _Ty=Vertex,
+              _Objty=Vertex
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(726): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float&,float&,int,int>(_Alloc &,_Objty *const ,float &,float &,int &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Alloc=std::allocator<Vertex>,
+              _Ty=Vertex,
+              _Objty=Vertex
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\vector(739): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<Vertex,std::allocator<Vertex>>::_Emplace_back_with_unused_capacity<float&,float&,_Ty,_Ty>(float &,float &,_Ty &&,_Ty &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Basic\Quad.cpp(32): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<Vertex,std::allocator<Vertex>>::emplace_back<float&,float&,int,int>(float &,float &,int &&,int &&)'에 대한 참조를 확인하세요.
+  GameObject.cpp
+  UpDownButton.cpp
+  Character.cpp
+  Playable.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Diablo\Character\Playable.cpp(125,50): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Diablo\Character\Playable.cpp(136,50): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Diablo\Character\Playable.cpp(147,50): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Diablo\Character\Playable.cpp(158,50): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Diablo\Character\Playable.cpp(169,52): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Diablo\Character\Playable.cpp(180,50): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Diablo\Character\Playable.cpp(191,49): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Diablo\Character\Playable.cpp(202,51): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Cursor.cpp
+  UIManager.cpp
+  GameTileMap.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Game\GameTileMap.cpp(11,28): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Game\GameTileMap.cpp(11,18): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Game\GameTileMap.cpp(88,47): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Knight.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Objects\Game\Knight.cpp': No such file or directory
+  KnightMonster.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Objects\Game\KnightMonster.cpp': No such file or directory
+  KnightMonsterManager.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Objects\Game\KnightMonsterManager.cpp': No such file or directory
+  KnightPlayer.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Objects\Game\KnightPlayer.cpp': No such file or directory
+  Mario.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Objects\Game\Mario.cpp': No such file or directory
+  Plane.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Objects\Game\Plane.cpp': No such file or directory
+  Tank.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  Tile.cpp
+  TileMap.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Game\TileMap.cpp(59,29): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Game\TileMap.cpp(70,30): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Objects\Game\TileMap.cpp(134,18): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  AnimationScene.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Scenes\AnimationScene.cpp': No such file or directory
+  CameraScene.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Scenes\CameraScene.cpp': No such file or directory
+  CollisionScene.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Scenes\CollisionScene.cpp': No such file or directory
+  DiabloScene.cpp
+  DijkstraScene.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Scenes\DijkstraScene.cpp': No such file or directory
+  FontScene.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Scenes\FontScene.cpp': No such file or directory
+  InstancingScene.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Scenes\InstancingScene.cpp': No such file or directory
+  PlaneScene.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Scenes\PlaneScene.cpp': No such file or directory
+  RenderTargetScene.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Scenes\RenderTargetScene.cpp': No such file or directory
+  ShaderScene.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Scenes\ShaderScene.cpp': No such file or directory
+  TailScene.cpp
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'Scenes\TailScene.cpp': No such file or directory
+  TankScene.cpp
+  TestScene.cpp
+  TextureScene.cpp
+  TileScene.cpp
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Scenes\TileScene.cpp(93,33): warning C4267: '초기화 중': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Scenes\TileScene.cpp(95,36): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\hksdo\source\repos\SGA_DX11_2D\DX2D_2204\Scenes\TileScene.cpp(95,21): warning C4244: '인수': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
