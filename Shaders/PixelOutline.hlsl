@@ -11,6 +11,7 @@ cbuffer OptionBuffer : register(b1)
 cbuffer SizeBuffer : register(b2)
 {
     float2 imageSize;
+    float lineSize;
 }
 
 struct PixelInput
@@ -35,7 +36,7 @@ float4 PS(PixelInput input) : SV_TARGET
     {
         for (int x = -1; x <= 1; x++)
         {
-            float2 offset = (float2(x, y) / imageSize) * weight;
+            float2 offset = (float2(x, y) / imageSize) * lineSize;
             albedo = map.Sample(samp, input.uv + offset);
             
             count += albedo.a;

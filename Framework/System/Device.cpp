@@ -16,7 +16,7 @@ Device::~Device()
 
 void Device::Clear()
 {
-    float clearColor[4] = { 0.0f, 0.125f, 0.3f, 1.0f };
+    float clearColor[4] = { 0.01f, 0.01f, 0.01f, 1.0f };
     deviceContext->ClearRenderTargetView(renderTargetView, clearColor);
 }
 
@@ -52,7 +52,7 @@ void Device::InitDevice()
         nullptr,
         D3D_DRIVER_TYPE_HARDWARE,
         0,
-        D3D11_CREATE_DEVICE_DEBUG,
+        D3D11_CREATE_DEVICE_DEBUG | D3D11_CREATE_DEVICE_BGRA_SUPPORT,
         nullptr,
         0,
         D3D11_SDK_VERSION,

@@ -1,7 +1,7 @@
 #include "Framework.h"
 
 Button::Button(wstring file)
-	: Quad(file)
+	: Quad(file), fileName(file)
 {
 	collider = new RectCollider(Size());
 	collider->SetParent(this);
@@ -14,6 +14,15 @@ Button::Button(Vector2 size)
 	collider->SetParent(this);
 }
 
+Button::Button(Vector2 size, wstring file)
+	:Quad(size), fileName(file)
+{
+	collider = new RectCollider(size);
+	collider->SetParent(this);
+
+	SetTexture(Texture::Add(file));
+}
+
 Button::~Button()
 {
 	delete collider;
@@ -21,7 +30,9 @@ Button::~Button()
 
 void Button::Update()
 {
-	if (collider->IsPointCollision(mousePos))
+	Vector2 clickPos = CAM->ScreenToWorld(mousePos);
+
+	if (collider->IsPointCollision(clickPos))
 	{
 		if (KEY_DOWN(VK_LBUTTON))
 			isDownCheck = true;

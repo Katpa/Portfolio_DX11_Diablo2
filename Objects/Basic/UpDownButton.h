@@ -2,37 +2,29 @@
 
 class UpDownButton : public Transform
 {
-private:
-	enum State
-	{
-		UP, DOWN
-	};
-
 public:
-	UpDownButton(wstring file);
+	UpDownButton(wstring file1, wstring file2);
 	~UpDownButton();
 
 	void Update();
 	void Render();
 
-	void Hide();
-	void Show();
-
-	void SetUP();
-	void SetPress();
-	void SetDown();
-
 	void SetEvent(CallBack Event) { this->Event = Event; }
+	void SetHotKey(char key) { hotKey = key; }
 
 private:
-	Frame* curFrame;
-	Frame* up;
-	Frame* down;
+	void SetDown();
+	void SetUp();
+
+private:
+	Quad* curImage;
+	Quad* up;
+	Quad* down;
+
+	char hotKey = VK_PAUSE;
 
 	RectCollider* collider;
-	State state = UP;
+	bool isDown = false;
 
 	CallBack Event = nullptr;
-
-
 };

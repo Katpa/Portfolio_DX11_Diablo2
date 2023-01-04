@@ -13,10 +13,17 @@ Camera::~Camera()
 
 void Camera::Update()
 {
-	if (target)
-		FollowMode();
+	if (isShake)
+	{
+		CameraShake();
+	}
 	else
-		FreeMode();
+	{
+		if (target)
+			FollowMode();
+		else
+			FreeMode();
+	}
 
 	SetView();	
 }
@@ -26,6 +33,14 @@ void Camera::RenderUI()
 	ImGui::Text("Camera Option");
 	ImGui::Text("Position(X : %d, Y : %d)", (int)localPosition.x, (int)localPosition.y);
 	ImGui::SliderFloat("Cam Speed", &speed, 0, 500);
+}
+
+void Camera::CameraShakeOn()
+{
+	isShake = true;
+	shakeTime = 0;
+	additionalCameraPos = {};
+
 }
 
 Vector2 Camera::ScreenToWorld(Vector2 pos)
@@ -62,6 +77,34 @@ void Camera::FollowMode()
 	FixPosition(targetPos);
 
 	localPosition = LERP(localPosition, targetPos, speed * DELTA);
+}
+
+void Camera::CameraShake()
+{
+	if (!isShake) return;
+
+	Vector2 targetPos = target->GlobalPosition() - targetOffset;
+
+	FixPosition(targetPos);
+
+	shakeTime += DELTA;
+	additionalCameraPos += shakeSpeed * DELTA;
+
+	localPosition = targetPos + additionalCameraPos;
+
+	if (additionalCameraPos.x > +shakeLimit.x ||
+		additionalCameraPos.x < -shakeLimit.x)
+	{
+		shakeSpeed.x *= -1;
+	}
+	if (additionalCameraPos.y > +shakeLimit.y ||
+		additionalCameraPos.y < -shakeLimit.y)
+	{
+		shakeSpeed.y *= -1;
+	}
+
+	if (shakeTime > 1.5f)
+		isShake = false;
 }
 
 void Camera::SetView()

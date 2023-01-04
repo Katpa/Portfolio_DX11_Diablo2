@@ -7,7 +7,10 @@ public:
 	~AnimObject();
 
 	void Update();
-	void Render();
+	virtual void Render();
+
+	void SetPixelShader(wstring file);
+	ColorBuffer* GetColorBuffer() { return colorBuffer; }
 
 protected:
 	VertexShader* vertexShader;

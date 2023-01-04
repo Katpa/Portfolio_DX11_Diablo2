@@ -1,7 +1,7 @@
 #include "Framework.h"
 #include "AStar.h"
 
-AStar::AStar(GameTileMap* map)
+AStar::AStar(InstancingMap* map)
 {
     map->GetNodes(nodes);
     SetEdge(map->GetWidth());
@@ -23,8 +23,18 @@ void AStar::Update()
 
 void AStar::Render()
 {
+    float R = CAM->GlobalPosition().x + WIN_WIDTH + 50;
+    float L = CAM->GlobalPosition().x - 50;
+    float T = CAM->GlobalPosition().y + WIN_HEIGHT + 50;
+    float B = CAM->GlobalPosition().y - 50;
+
     for (Node* node : nodes)
+    {
+        if(node->pos.x < R && node->pos.x > L &&
+            node->pos.y < T && node->pos.y > B)
         node->Render();
+    }
+        
 }
 
 int AStar::FindCloseNode(Vector2 pos)
@@ -52,9 +62,6 @@ int AStar::FindCloseNode(Vector2 pos)
 
 void AStar::GetPath(IN int start, IN int end, OUT vector<Vector2>& path)
 {
-    //if (nodes[end]->state == Node::OBSTACLE)
-        //return;
-
     Reset();
     path.clear();
 
@@ -68,7 +75,6 @@ void AStar::GetPath(IN int start, IN int end, OUT vector<Vector2>& path)
     nodes[start]->via = start;
     nodes[start]->state = Node::OPEN;
 
-    //openNodes.push_back(start);
     heap->Insert(nodes[start]);
 
     while (nodes[end]->state != Node::CLOSED)
@@ -92,7 +98,6 @@ void AStar::GetPath(IN int start, IN int end, OUT vector<Vector2>& path)
 
     path.push_back(nodes[start]->pos);
 
-    //openNodes.clear();    
     heap->Clear();
 }
 
@@ -102,6 +107,13 @@ void AStar::Position(float x, float y)
     {
         node->pos += Vector2(x, y);
     }
+}
+
+Vector2 AStar::FindWarpPos(Vector2 pos)
+{
+    int index = FindCloseNode(pos);
+
+    return nodes[index]->pos;
 }
 
 void AStar::Reset()
@@ -115,26 +127,12 @@ void AStar::Reset()
 
 float AStar::GetDistance(int start, int end)
 {
-    //ManhattanDistance
-    //Vector2 startPos = nodes[start]->pos;
-    //Vector2 endPos = nodes[end]->pos;
-    //
-    //Vector2 temp = endPos - startPos;
-    //
-    //return abs(temp.x) + abs(temp.y);
-
     Vector2 startPos = nodes[start]->pos;
     Vector2 endPos = nodes[end]->pos;
-    
-    Vector2 temp = endPos - startPos;
 
-    float x = abs(temp.x);
-    float y = abs(temp.y);
+    Vector2 output = endPos - startPos;
 
-    float minSize = min(x, y);
-    float maxSize = max(x, y);
-
-    return sqrt(minSize * minSize * 2) + (maxSize - minSize);
+    return output.Length();
 }
 
 void AStar::Extend(int center, int end)

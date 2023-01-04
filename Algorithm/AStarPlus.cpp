@@ -1,16 +1,27 @@
 #include "Framework.h"
 
-AStarPlus::AStarPlus(GameTileMap* map)
+AStarPlus::AStarPlus(InstancingMap* map)
     :AStar()
 {
     map->GetNodes(nodes);
     SetEdge(map->GetWidth());
 
     heap = new Heap();
+
+    SetRender();
 }
 
 AStarPlus::~AStarPlus()
 {
+}
+
+void AStarPlus::SetRender()
+{
+    for (int i = 0; i<nodes.size(); i++)
+    {
+        nodes[i]->SetEdgePos(instances);
+    }
+
 }
 
 void AStarPlus::SetEdge(UINT width)

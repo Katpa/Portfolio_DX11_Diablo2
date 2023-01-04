@@ -53,7 +53,7 @@ void Heap::UpdateLower(int index)
             minNode = lChild;
 
         if (rChild < heap.size() && heap[rChild]->GetCost() < heap[minNode]->GetCost())
-            minNode = lChild;
+            minNode = rChild;
 
         if (minNode == curIndex)
             break;

@@ -1,6 +1,6 @@
 #pragma once
 
-class Isometric : public Transform
+class Isometric : public GameObject
 {
 public:
 	Isometric(wstring file, Vector2 startUV = Vector2(0, 0), Vector2 endUV = Vector2(1, 1), Vector2 pos = Vector2());

@@ -9,12 +9,13 @@ private:
 	};
 
 public:
+	IButton(wstring file, Vector2 size);
 	IButton(wstring file);
 	IButton(Vector2 size);
 	~IButton();
 
 	void Update(bool isDebugMode = true);
-	void Render(bool isDebugMode = true);
+	void Render();
 
 	void SetEvent(CallBack Event) { this->Event = Event; }
 	void SetIntEvent(CallBackInt Event) { IntEvent = Event; }

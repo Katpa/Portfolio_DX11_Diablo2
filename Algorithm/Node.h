@@ -38,6 +38,7 @@ public:
 	void SetState(State state) { this->state = state; }
 	State ReturnState() { return state; }
 	float GetCost() { return f; }
+	void SetEdgePos(vector<Matrix>& instances);
 
 private:
 	Vector2 pos;

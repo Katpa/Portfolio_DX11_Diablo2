@@ -1,0 +1,13 @@
+key,fileDirectory,infoDirectory,type,sizeX,sizeY,effect,effectPower,cost
+belt,Textures/UI/items/belt.png,Textures/UI/items/belt_info.png,4,2,1,1,5,1000
+boots,Textures/UI/items/boots.png,Textures/UI/items/boots_info.png,5,2,2,1,7,1200
+greatSword,Textures/UI/items/great_sword.png,Textures/UI/items/great_sword_info.png,1,1,4,0,10,1300
+heavyArmor,Textures/UI/items/heavy_armor.png,Textures/UI/items/heavy_armor_info.png,3,2,3,1,15,1800
+helm,Textures/UI/items/helm.png,Textures/UI/items/helm_info.png,7,2,2,1,8,1200
+glove,Textures/UI/items/leather_glove.png,Textures/UI/items/leather_glove_info.png,6,2,2,1,3,700
+lightArmor,Textures/UI/items/light_armor.png,Textures/UI/items/light_armor_info.png,3,2,3,1,11,1300
+lightSaber,Textures/UI/items/light_saber.png,Textures/UI/items/light_saber_info.png,1,2,3,0,27,3500
+wand,Textures/UI/items/wand.png,Textures/UI/items/wand_info.png,1,1,2,0,15,2100
+hpPotion,Textures/UI/items/hpPotion.png,Textures/UI/items/hpPotion_info.png,0,1,1,2,30,100
+mpPotion,Textures/UI/items/mpPotion.png,Textures/UI/items/mpPotion_info.png,0,1,1,3,20,100
+hmpPotion,Textures/UI/items/hmpPotion.png,Textures/UI/items/hmpPotion_info.png,0,1,1,4,50,200

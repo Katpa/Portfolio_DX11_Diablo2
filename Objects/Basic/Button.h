@@ -5,12 +5,13 @@ class Button : public Quad
 private:
 	enum State
 	{
-		NONE, DOWN, OVER
+		NONE, DOWN = 1, OVER
 	};
 
 public:
 	Button(wstring file);
 	Button(Vector2 size);
+	Button(Vector2 size, wstring file);
 	~Button();
 
 	void Update();
@@ -21,6 +22,8 @@ public:
 
 	void SetIntParam(int param) { intParam = param; }
 
+	wstring ReturnFileName() { return fileName; }
+	State ReturnBtnState() { return state; }
 	Collider* GetCollider() { return collider; }
 protected:
 	Collider* collider;
@@ -33,8 +36,10 @@ protected:
 	int intParam = 0;
 
 	Float4 noneColor = { 1.0f, 1.0f, 1.0f, 1.0f };
-	Float4 downColor = { 0.5f, 0.5f, 0.5f, 1.0f };
-	Float4 overColor = { 0.9f, 0.9f, 0.9f, 1.0f };
+	Float4 downColor = { 0.0f, 0.0f, 0.7f, 1.0f };
+	Float4 overColor = { 0.8f, 0.8f, 0.8f, 1.0f };
 
 	bool isDownCheck = false;
+
+	wstring fileName;
 };

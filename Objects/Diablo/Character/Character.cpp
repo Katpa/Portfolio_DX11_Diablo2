@@ -18,13 +18,17 @@ void Character::SetPath(vector<Vector2> path)
 
 void Character::GetDamage(UINT dmg)
 {
+	if (dmg < def)
+		dmg = def;
+
 	curHP -= dmg - def;
 
 	if (curHP < 1)
 	{
 		curHP = 0;
-		SetAction(DEATH);
 	}
+
+	SetAction(GET_HIT);
 }
 
 void Character::GiveDamage(Character* target, UINT dmg)
@@ -36,13 +40,14 @@ void Character::Move()
 {
 	if (path.empty()) return;
 
-	direction = path.back() - localPosition;
+	Vector2 distance = path.back() - collision.body->GlobalPosition();
+	direction = distance.Normalized();
 	
-	SetAngle();
+	//SetAngle();
 	SetAction(WALK);
 	localPosition += direction * speed * DELTA;
 
-	if (direction.Length() < 5.0f)
+	if (distance.Length() < 5.0f)
 	{
 		path.pop_back();
 		if (path.empty())

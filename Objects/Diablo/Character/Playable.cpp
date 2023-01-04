@@ -1,76 +1,307 @@
 #include "Framework.h"
 
-Playable::Playable(UINT maxHP, UINT maxMP, UINT maxSP, UINT str, UINT dex, UINT eng, UINT via)
-	:Character(), defaultHP(maxHP),defaultMP(maxMP),defaultSP(maxSP),
-					maxMP(maxMP), curMP(maxMP), maxSP(maxSP), curSP(maxSP)
-{
-	this->maxHP = maxHP;
-	curHP = maxHP;
-
-	stat.strength = str;
-	stat.dexterlity = dex;
-	stat.energy = eng;
-	stat.viality = via;
-
-	speed = 300.0f;
-	SetStats();
-}
-
 Playable::Playable(CharacterData data)
 	:Character(), defaultHP(data.maxHP), defaultMP(data.maxMP), defaultSP(data.maxSP),
 				  maxMP(data.maxMP), curMP(data.maxMP), maxSP(data.maxSP), curSP(data.maxSP)
 {
-	maxHP = data.maxHP;
-	curHP = maxHP;
-
 	stat.strength = data.str;
 	stat.dexterlity = data.dex;
 	stat.energy = data.eng;
 	stat.viality = data.via;
 
-	speed = 300.0f;
-	SetStats();
+	speed = 200.0f;
 
 	SetClip(data);
 
+	collision.body = new CircleCollider(20.0f);
+	collision.body->SetParent(this);
+	collision.body->UpdateWorld();
+
 	uiManager = new UIManager(&stat.strength, &stat.dexterlity, &stat.energy, &stat.viality,
-							&curHP, &curMP, &curSP, &curEXP);
+							&curHP, &curMP, &curSP, &curEXP, &maxHP, &maxMP, &maxSP, &maxEXP, &level,
+							&isRun, &stat.statPoint, &dmg, &def);
+
+	inventory = new Inventory(&gold);
+	inventory->Active() = false;
+
+	converter = new Converter();
+
+	maxHP = data.maxHP;
+
+	SetAction(IDLE);
+	Scale() *= TEX_SCALE_MULTI;
+
+	maxEXP = DataManager::Get()->GetExpData(level);
+
+	ZOrder::Get()->Insert(this);
+
+	mouseSkill = "fireBall";
+	lastBuffName = "none";
+
+	SetStats();
+	curHP = maxHP;
 }
 
 Playable::~Playable()
 {
 	delete uiManager;
+	delete inventory;
+	delete converter;
 }
 
 void Playable::Update()
 {
+	SetStats();
+
+	SetAngle();
+
+	Control();
+
+	Move();
+
+	InteractNPC();
+
 	AnimObject::Update();
 	collision.body->UpdateWorld();
+
+	uiManager->Update();
+	inventory->Update();
+	converter->Update();
+
+	Recover();
 }
 
-void Playable::Render(bool isDebugMode)
+void Playable::Render()
 {
 	AnimObject::Render();
-	if (isDebugMode)
-		collision.body->Render();
+}
+
+void Playable::RenderUI()
+{
+	inventory->Render();
+	uiManager->Render();
+	converter->Render();
+}
+
+void Playable::GetExp(UINT exp)
+{
+	curEXP += exp;
+	if (curEXP >= maxEXP)
+		LevelUp();
+}
+
+void Playable::GetMoney(UINT gold)
+{
+	this->gold += gold;
+}
+
+bool Playable::SpendMoney(UINT gold)
+{
+	if (this->gold > gold)
+	{
+		this->gold -= gold;
+		return true;
+	}
+
+	return false;
+}
+
+void Playable::Cast(Vector2 mousePoint)
+{
+	if (SKILL->IsPassive(mouseSkill)) return;
+
+	if (skillCoolTime < 0.01f && SKILL->ReturnSkillCost(mouseSkill) < curMP)
+	{
+		direction = CAM->ScreenToWorld(mousePos) - collision.body->GlobalPosition();
+		SetAngle();
+		SetAction(CAST);
+
+		curMP -= SKILL->ReturnSkillCost(mouseSkill);
+
+		SKILL->CastSkill(mouseSkill, true, dmg, GlobalPosition(), mousePoint, angleNum, this);
+		uiManager->SwitchCoolTime();
+		skillCoolTime = SKILL->ReturnCoolTime(mouseSkill);
+
+		path.clear();
+	}
+	else
+	{
+		if(!SFX->IsPlaySound("cantUseYet"))
+			SFX->Play("cantUseYet", 0.1f);
+	}
+}
+
+void Playable::AdaptItem(POINT effectPower)
+{
+	curHP += effectPower.x;
+	curMP += effectPower.y;
+
+	if (curHP > maxHP)
+		curHP = maxHP;
+	if (curMP > maxMP)
+		curMP = maxMP;
+
+	SFX->Play("potion", 0.1f);
 }
 
 void Playable::Control()
 {
+	if (KEY_DOWN('I'))
+		inventory->Active() = !inventory->Active();
+
+	if (KEY_DOWN('C'))
+		uiManager->SwitchStatus();
+
+	if (KEY_DOWN('F'))
+		converter->Active() = !converter->Active();
+
+	if (KEY_DOWN(VK_F1))
+		SetSkill("fireBall");
+
+	if (KEY_DOWN(VK_F2))
+		SetSkill("teleport");
+	
+	if (KEY_DOWN(VK_F3))
+		SetSkill("iceOrb");
+
+	if (KEY_DOWN(VK_F4))
+	{
+		SetSkill("fanaticism");
+
+		SKILL->CastSkill(mouseSkill, true, 0, GlobalPosition(), Vector2(), 0, this);
+	}
+
+	if (KEY_DOWN('R'))
+	{
+		isRun = !isRun;
+	}
 }
 
-void Playable::CursorAction()
+void Playable::Move()
 {
+	if (path.empty()) return;
 
+	Vector2 distance = path.back() - collision.body->GlobalPosition();
+	direction = distance.Normalized();
+
+	if (isRun)
+	{
+		SetAction(RUN);
+		localPosition += direction * speed * 1.8f * DELTA;
+		curSP -= DELTA;
+		if (curSP < 0.1f)
+			isRun = false;
+	}
+	else
+	{
+		SetAction(WALK);
+		localPosition += direction * speed * DELTA;
+	}
+
+	if (distance.Length() < 5.0f)
+	{
+		path.pop_back();
+		if (path.empty())
+			SetAction(IDLE);
+	}
+}
+
+void Playable::InteractNPC()
+{
+	if (npc == nullptr) return;
+
+	Vector2 distance = npc->Position() - Position();
+	float length = distance.Length();
+
+	if (distance.Length() < 60)
+	{
+		npc->OpenStore();
+		inventory->Active() = true;
+		npc = nullptr;
+	}
+}
+
+void Playable::LevelUp()
+{
+	curEXP -= maxEXP;
+	level++;
+	maxEXP = DataManager::Get()->GetExpData(level);
+	stat.statPoint += 5;
+
+	curHP = maxHP;
+	curMP = maxMP;
+	curSP = maxSP;
+
+	SFX->Play("levelup", 0.1f);
+}
+
+void Playable::Recover()
+{
+	autoHealFrame += stat.strength * 0.1f * DELTA;
+	autoRegenerateFrame += stat.energy * 0.1f * DELTA;
+
+	if (autoHealFrame > 1.0f)
+	{
+		curHP++;
+		autoHealFrame -= 1.0f;
+		if (curHP > maxHP)
+			curHP = maxHP;
+	}
+
+	if (autoRegenerateFrame > 1.0f)
+	{
+		curMP++;
+		autoRegenerateFrame -= 1.0f;
+		if (curMP > maxMP)
+			curMP = maxMP;
+	}
+
+	if(!isRun && !path.empty() || path.empty())
+		curSP += DELTA;
+	if (curSP > maxSP)
+		curSP = maxSP;
+
+	if (skillCoolTime > 0.01f)
+	{
+		skillCoolTime -= DELTA;
+
+		if(skillCoolTime < 0.01f)
+			uiManager->SwitchCoolTime();
+	}
+}
+
+void Playable::SetSkill(string skillName)
+{
+	uiManager->SetSkillIcon(skillName);
+	mouseSkill = skillName;
 }
 
 void Playable::SetStats()
 {
-	dmg = stat.strength * 2;
+	//착용된 장비 버프 정보
+	POINT EquipEffect = inventory->ReturnEquipEffect();
+
+	dmg = stat.strength * 2 + EquipEffect.x;
 	maxHP = defaultHP + stat.viality * 5;
 	maxSP = defaultSP + stat.viality * 2;
-	maxMP = defaultMP + stat.energy * 2;
-	def = stat.dexterlity * 2;
+	maxMP = defaultMP + stat.energy * 5;
+	def = stat.dexterlity * 2 + EquipEffect.y;
+
+	buff = { 0, 0, 0 };
+
+	//패시브 스킬 유무 확인 후 효과 적용
+	if (SKILL->IsPassive(mouseSkill))
+	{
+		lastBuffName = mouseSkill;
+		buff = SKILL->ReturnBuffSkill(mouseSkill)->ReturnBuff();
+
+		dmg *= 1 + buff.extraATK;
+		def *= 1 + buff.extraDEF;
+	}
+	else if (lastBuffName != "none")
+	{
+		SKILL->ReturnBuffSkill(lastBuffName)->Active() = false;
+	}
 }
 
 void Playable::SetAngle()
@@ -80,37 +311,43 @@ void Playable::SetAngle()
 	float temp = angle / PI_ANGLE;
 
 	if (temp > 15)
-		angleNum = 12;
-	else if (temp > 13)
-		angleNum = 13;
-	else if (temp > 11)
-		angleNum = 14;
-	else if (temp > 9)
-		angleNum = 15;
-	else if (temp > 7)
-		angleNum = 0;
-	else if (temp > 5)
-		angleNum = 1;
-	else if (temp > 3)
-		angleNum = 2;
-	else if (temp > 1)
-		angleNum = 3;
-	else if (temp > -1)
 		angleNum = 4;
-	else if (temp > -3)
+	else if (temp > 13)
 		angleNum = 5;
-	else if (temp > -5)
+	else if (temp > 11)
 		angleNum = 6;
-	else if (temp > -7)
+	else if (temp > 9)
 		angleNum = 7;
-	else if (temp > -9)
+	else if (temp > 7)
 		angleNum = 8;
-	else if (temp > -11)
+	else if (temp > 5)
 		angleNum = 9;
-	else if (temp > -13)
+	else if (temp > 3)
 		angleNum = 10;
-	else
+	else if (temp > 1)
 		angleNum = 11;
+	else if (temp > -1)
+		angleNum = 12;
+	else if (temp > -3)
+		angleNum = 13;
+	else if (temp > -5)
+		angleNum = 14;
+	else if (temp > -7)
+		angleNum = 15;
+	else if (temp > -9)
+		angleNum = 0;
+	else if (temp > -11)
+		angleNum = 1;
+	else if (temp > -13)
+		angleNum = 2;
+	else
+		angleNum = 3;
+}
+
+void Playable::EndCast()
+{
+	isCast = false;
+	SetAction(IDLE);
 }
 
 void Playable::SetClip(CharacterData data)
@@ -161,7 +398,8 @@ void Playable::SetClip(CharacterData data)
 		frames.clear();
 		for (int j = 0; j < data.cast.animSize; j++)
 			frames.push_back(new Frame(file, cutSize.x * j, cutSize.y * i, cutSize.x, cutSize.y));
-		clips[CAST + i] = new Clip(frames);
+		clips[CAST + i] = new Clip(frames, Clip::END, 0.05f);
+		clips[CAST + i]->SetEvent(1.0f, bind(&Playable::EndCast, this));
 	}
 
 	file = data.getHit.file;
@@ -172,7 +410,7 @@ void Playable::SetClip(CharacterData data)
 		frames.clear();
 		for (int j = 0; j < data.getHit.animSize; j++)
 			frames.push_back(new Frame(file, cutSize.x * j, cutSize.y * i, cutSize.x, cutSize.y));
-		clips[GET_HIT + i] = new Clip(frames);
+		clips[GET_HIT + i] = new Clip(frames, Clip::END);
 	}
 
 	file = data.walk.file;
@@ -205,6 +443,6 @@ void Playable::SetClip(CharacterData data)
 		frames.clear();
 		for (int j = 0; j < data.death.animSize; j++)
 			frames.push_back(new Frame(file, cutSize.x * j, cutSize.y * i, cutSize.x, cutSize.y));
-		clips[DEATH + i] = new Clip(frames);
+		clips[DEATH + i] = new Clip(frames, Clip::END);
 	}
 }

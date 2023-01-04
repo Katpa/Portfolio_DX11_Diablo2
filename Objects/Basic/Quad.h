@@ -15,6 +15,7 @@ public:
 	void SetPixelShader(wstring file);
 
 	Vector2 Size() { return texture->GetSize(); }
+	Texture* ReturnTexture() { return texture; }
 	ColorBuffer* GetColorBuffer() { return colorBuffer; }
 
 private:

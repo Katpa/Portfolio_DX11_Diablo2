@@ -55,6 +55,8 @@ Isometric::~Isometric()
 
 void Isometric::Render()
 {
+	if (this == nullptr) return;
+
 	worldBuffer->Set(world);
 	worldBuffer->SetVS(0);
 	colorBuffer->SetPS(0);

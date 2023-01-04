@@ -39,3 +39,8 @@ void AnimObject::Render()
 
 	curClip->Render();
 }
+
+void AnimObject::SetPixelShader(wstring file)
+{
+	pixelShader = Shader::AddPS(file);
+}

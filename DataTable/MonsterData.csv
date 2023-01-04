@@ -1,0 +1,3 @@
+key,type,directory-idle,animSIze,directory-atk1,animSIze,atkTiming,directory-cast,animSIze,directory-gethit,animSIze,directory-walk,animSIze,directory-death,animSIze,dmg,def,speed,maxHP
+BlunderBore,0,Textures/Character/blunderbore/idle.png,8,Textures/Character/blunderbore/atk01.png,15,0.6,-,0,Textures/Character/blunderbore/getHit.png,7,Textures/Character/blunderbore/walk.png,8,Textures/Character/blunderbore/death.png,23,15,8,200,60
+CouncilMember,1,Textures/Character/councilMember/idle.png,7,Textures/Character/councilMember/atk01.png,10,0.7,Textures/Character/councilMember/cast01.png,14,Textures/Character/councilMember/getHit.png,4,Textures/Character/councilMember/walk.png,11,Textures/Character/councilMember/death.png,19,18,5,150,40

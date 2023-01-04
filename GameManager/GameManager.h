@@ -16,6 +16,6 @@ private:
 private:
 	Scene* scene;
 
-	float renderTime = 0;
-	const float renderDelayTime = 0.0069f;
+	float renderFrame = 0;
+	const float renderDelay = 0.0069f;
 };

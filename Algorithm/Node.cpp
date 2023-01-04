@@ -51,3 +51,19 @@ void Node::AddEdge(Node* node)
 
 	edges.push_back(edge);
 }
+
+void Node::SetEdgePos(vector<Matrix>& instances)
+{
+	for (Edge* edge : edges)
+	{
+		Transform transform;
+		Matrix matrix;
+
+		transform.Position() = edge->line->Position();
+		transform.UpdateWorld();
+
+		matrix = XMMatrixTranspose(transform.GetWorld());
+
+		instances.push_back(matrix);
+	}
+}

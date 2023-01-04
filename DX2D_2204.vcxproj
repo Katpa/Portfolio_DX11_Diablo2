@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -148,12 +148,16 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <FxCompile>
+      <EntryPointName>PS</EntryPointName>
+    </FxCompile>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+    </FxCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm\AStar.h" />
     <ClInclude Include="Algorithm\AStarPlus.h" />
-    <ClInclude Include="Algorithm\Dijkstra.h" />
-    <ClInclude Include="Algorithm\DNode.h" />
     <ClInclude Include="Algorithm\Heap.h" />
     <ClInclude Include="Algorithm\Node.h" />
     <ClInclude Include="DX2D_2204.h" />
@@ -193,6 +197,7 @@
     <ClInclude Include="Framework\Utility\Timer.h" />
     <ClInclude Include="Framework\Utility\Utility.h" />
     <ClInclude Include="Framework\Utility\Xml.h" />
+    <ClInclude Include="Framework\Utility\ZOder.h" />
     <ClInclude Include="GameManager\GameManager.h" />
     <ClInclude Include="Libraries\ImGui\dirent\dirent.h" />
     <ClInclude Include="Libraries\ImGui\ImGuiFileDialog.h" />
@@ -209,53 +214,45 @@
     <ClInclude Include="Objects\Basic\Quad.h" />
     <ClInclude Include="Objects\Basic\GameObject.h" />
     <ClInclude Include="Objects\Basic\UpDownButton.h" />
+    <ClInclude Include="Objects\Diablo\Character\Cain.h" />
     <ClInclude Include="Objects\Diablo\Character\Character.h" />
+    <ClInclude Include="Objects\Diablo\Character\Diablo.h" />
+    <ClInclude Include="Objects\Diablo\Character\Monster.h" />
     <ClInclude Include="Objects\Diablo\Character\Playable.h" />
+    <ClInclude Include="Objects\Diablo\Map\InstancingMap.h" />
+    <ClInclude Include="Objects\Diablo\Skill\DiabloLightening.h" />
+    <ClInclude Include="Objects\Diablo\Skill\Fanaticism.h" />
+    <ClInclude Include="Objects\Diablo\Skill\FireBall.h" />
+    <ClInclude Include="Objects\Diablo\Skill\fireStomp.h" />
+    <ClInclude Include="Objects\Diablo\Skill\IceBolt.h" />
+    <ClInclude Include="Objects\Diablo\Skill\IceOrb.h" />
+    <ClInclude Include="Objects\Diablo\Skill\Skill.h" />
+    <ClInclude Include="Objects\Diablo\Skill\Teleport.h" />
+    <ClInclude Include="Objects\Diablo\System\ItemManager.h" />
+    <ClInclude Include="Objects\Diablo\System\MonsterManager.h" />
+    <ClInclude Include="Objects\Diablo\System\SkillManager.h" />
+    <ClInclude Include="Objects\Diablo\UI\Consumable.h" />
+    <ClInclude Include="Objects\Diablo\UI\Converter.h" />
     <ClInclude Include="Objects\Diablo\UI\Cursor.h" />
+    <ClInclude Include="Objects\Diablo\UI\Equipment.h" />
+    <ClInclude Include="Objects\Diablo\UI\HorizentalProgressBar.h" />
+    <ClInclude Include="Objects\Diablo\UI\Inventory.h" />
+    <ClInclude Include="Objects\Diablo\UI\Item.h" />
+    <ClInclude Include="Objects\Diablo\UI\MiniMap.h" />
     <ClInclude Include="Objects\Diablo\UI\UIManager.h" />
-    <ClInclude Include="Objects\Game\GameTileMap.h" />
-    <ClInclude Include="Objects\Game\Knight.h" />
-    <ClInclude Include="Objects\Game\KnightMonster.h" />
-    <ClInclude Include="Objects\Game\KnightMonsterManager.h" />
-    <ClInclude Include="Objects\Game\KnightPlayer.h" />
-    <ClInclude Include="Objects\Game\Mario.h" />
-    <ClInclude Include="Objects\Game\Plane.h" />
-    <ClInclude Include="Objects\Game\Tank.h" />
+    <ClInclude Include="Objects\Diablo\UI\VerticalProgressBar.h" />
     <ClInclude Include="Objects\Game\TileMap.h" />
     <ClInclude Include="Objects\Game\Tile.h" />
+    <ClInclude Include="Objects\Game\TilePallet.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="Scenes\AnimationScene.h" />
-    <ClInclude Include="Scenes\CameraScene.h" />
-    <ClInclude Include="Scenes\CollisionScene.h" />
     <ClInclude Include="Scenes\DiabloScene.h" />
-    <ClInclude Include="Scenes\DijkstraScene.h" />
-    <ClInclude Include="Scenes\FontScene.h" />
-    <ClInclude Include="Scenes\InstancingScene.h" />
-    <ClInclude Include="Scenes\PlaneScene.h" />
-    <ClInclude Include="Scenes\RenderTargetScene.h" />
     <ClInclude Include="Scenes\Scene.h" />
-    <ClInclude Include="Scenes\SolarSystemScene.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="Scenes\SRTScene.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="Scenes\TailScene.h" />
-    <ClInclude Include="Scenes\TankScene.h" />
-    <ClInclude Include="Scenes\TestScene.h" />
-    <ClInclude Include="Scenes\TextureScene.h" />
-    <ClInclude Include="Scenes\TileScene.h" />
-    <ClInclude Include="Scenes\TutorialScene.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="Scenes\ShaderScene.h" />
+    <ClInclude Include="Scenes\MapToolScene.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Algorithm\AStar.cpp" />
     <ClCompile Include="Algorithm\AStarPlus.cpp" />
-    <ClCompile Include="Algorithm\Dijkstra.cpp" />
-    <ClCompile Include="Algorithm\DNode.cpp" />
     <ClCompile Include="Algorithm\Heap.cpp" />
     <ClCompile Include="Algorithm\Node.cpp" />
     <ClCompile Include="DX2D_2204.cpp" />
@@ -293,6 +290,7 @@
     <ClCompile Include="Framework\Utility\Timer.cpp" />
     <ClCompile Include="Framework\Utility\Utility.cpp" />
     <ClCompile Include="Framework\Utility\Xml.cpp" />
+    <ClCompile Include="Framework\Utility\ZOder.cpp" />
     <ClCompile Include="GameManager\GameManager.cpp" />
     <ClCompile Include="Libraries\ImGui\ImGuiFileDialog.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
@@ -309,44 +307,38 @@
     <ClCompile Include="Objects\Basic\Quad.cpp" />
     <ClCompile Include="Objects\Basic\GameObject.cpp" />
     <ClCompile Include="Objects\Basic\UpDownButton.cpp" />
+    <ClCompile Include="Objects\Diablo\Character\Cain.cpp" />
     <ClCompile Include="Objects\Diablo\Character\Character.cpp" />
+    <ClCompile Include="Objects\Diablo\Character\Diablo.cpp" />
+    <ClCompile Include="Objects\Diablo\Character\Monster.cpp" />
     <ClCompile Include="Objects\Diablo\Character\Playable.cpp" />
+    <ClCompile Include="Objects\Diablo\Map\InstancingMap.cpp" />
+    <ClCompile Include="Objects\Diablo\Skill\DiabloLightening.cpp" />
+    <ClCompile Include="Objects\Diablo\Skill\Fanaticism.cpp" />
+    <ClCompile Include="Objects\Diablo\Skill\FireBall.cpp" />
+    <ClCompile Include="Objects\Diablo\Skill\fireStomp.cpp" />
+    <ClCompile Include="Objects\Diablo\Skill\IceBolt.cpp" />
+    <ClCompile Include="Objects\Diablo\Skill\IceOrb.cpp" />
+    <ClCompile Include="Objects\Diablo\Skill\Skill.cpp" />
+    <ClCompile Include="Objects\Diablo\Skill\Teleport.cpp" />
+    <ClCompile Include="Objects\Diablo\System\ItemManager.cpp" />
+    <ClCompile Include="Objects\Diablo\System\MonsterManager.cpp" />
+    <ClCompile Include="Objects\Diablo\System\SkillManager.cpp" />
+    <ClCompile Include="Objects\Diablo\UI\Consumable.cpp" />
+    <ClCompile Include="Objects\Diablo\UI\Converter.cpp" />
     <ClCompile Include="Objects\Diablo\UI\Cursor.cpp" />
+    <ClCompile Include="Objects\Diablo\UI\Equipment.cpp" />
+    <ClCompile Include="Objects\Diablo\UI\HorizentalProgressBar.cpp" />
+    <ClCompile Include="Objects\Diablo\UI\Inventory.cpp" />
+    <ClCompile Include="Objects\Diablo\UI\Item.cpp" />
+    <ClCompile Include="Objects\Diablo\UI\MiniMap.cpp" />
     <ClCompile Include="Objects\Diablo\UI\UIManager.cpp" />
-    <ClCompile Include="Objects\Game\GameTileMap.cpp" />
-    <ClCompile Include="Objects\Game\Knight.cpp" />
-    <ClCompile Include="Objects\Game\KnightMonster.cpp" />
-    <ClCompile Include="Objects\Game\KnightMonsterManager.cpp" />
-    <ClCompile Include="Objects\Game\KnightPlayer.cpp" />
-    <ClCompile Include="Objects\Game\Mario.cpp" />
-    <ClCompile Include="Objects\Game\Plane.cpp" />
-    <ClCompile Include="Objects\Game\Tank.cpp" />
+    <ClCompile Include="Objects\Diablo\UI\VerticalProgressBar.cpp" />
     <ClCompile Include="Objects\Game\Tile.cpp" />
     <ClCompile Include="Objects\Game\TileMap.cpp" />
-    <ClCompile Include="Scenes\AnimationScene.cpp" />
-    <ClCompile Include="Scenes\CameraScene.cpp" />
-    <ClCompile Include="Scenes\CollisionScene.cpp" />
+    <ClCompile Include="Objects\Game\TilePallet.cpp" />
     <ClCompile Include="Scenes\DiabloScene.cpp" />
-    <ClCompile Include="Scenes\DijkstraScene.cpp" />
-    <ClCompile Include="Scenes\FontScene.cpp" />
-    <ClCompile Include="Scenes\InstancingScene.cpp" />
-    <ClCompile Include="Scenes\PlaneScene.cpp" />
-    <ClCompile Include="Scenes\RenderTargetScene.cpp" />
-    <ClCompile Include="Scenes\ShaderScene.cpp" />
-    <ClCompile Include="Scenes\SolarSystemScene.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Scenes\SRTScene.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Scenes\TailScene.cpp" />
-    <ClCompile Include="Scenes\TankScene.cpp" />
-    <ClCompile Include="Scenes\TestScene.cpp" />
-    <ClCompile Include="Scenes\TextureScene.cpp" />
-    <ClCompile Include="Scenes\TileScene.cpp" />
-    <ClCompile Include="Scenes\TutorialScene.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="Scenes\MapToolScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DX2D_2204.rc" />
@@ -363,6 +355,12 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
     </FxCompile>
     <FxCompile Include="Shaders\PixelEffectRemoveWhite.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="Shaders\PixelHorizentalBar.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
@@ -422,6 +420,12 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
     </FxCompile>
+    <FxCompile Include="Shaders\PixelVerticalBar.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
     <FxCompile Include="Shaders\Tutorial.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
@@ -429,6 +433,7 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
     </FxCompile>
     <FxCompile Include="Shaders\VertexCollider.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
@@ -436,6 +441,7 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
     </FxCompile>
     <FxCompile Include="Shaders\VertexColor.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
@@ -443,6 +449,7 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
     </FxCompile>
     <FxCompile Include="Shaders\VertexInstancing.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
@@ -450,6 +457,7 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
     </FxCompile>
     <FxCompile Include="Shaders\VertexUV.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
@@ -457,6 +465,7 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">VS</EntryPointName>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">VS</EntryPointName>
     </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

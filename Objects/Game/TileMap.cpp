@@ -30,10 +30,10 @@ void TileMap::Update()
 void TileMap::Render(bool isDebugMode)
 {
 	for (Tile* tile : bgTiles)
-		tile->Render(isDebugMode);
+		tile->Render();
 
 	for (Tile* tile : objTiles)
-		tile->Render(isDebugMode);
+		tile->Render();
 }
 
 void TileMap::ClickTile(wstring file, Tile::Type type)

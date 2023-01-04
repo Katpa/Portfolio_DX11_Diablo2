@@ -3,7 +3,9 @@
 #include "targetver.h"
 #define WIN32_LEAN_AND_MEAN
 
-#define WIN_WIDTH 1280
+#define TEX_SCALE_MULTI 1.5f
+
+#define WIN_WIDTH 960
 #define WIN_HEIGHT 720
 
 #define CENTER_X (WIN_WIDTH * 0.5f)
@@ -21,6 +23,12 @@
 #define CAM Environment::Get()->GetMainCamera()
 
 #define FX EffectManager::Get()
+#define SFX Audio::Get()
+
+#define MONSTER MonsterManager::Get()
+#define SKILL SkillManager::Get()
+
+#define SLOT_SIZE 29.0f
 
 #define LERP(s, e, t) (s + (e - s)*t)
 
@@ -62,6 +70,13 @@
 
 #pragma comment(lib, "fmod_vc.lib")
 
+//DirectWirte
+#include <d2d1_2.h>
+#include <dwrite.h>
+
+#pragma comment(lib, "d2d1.lib")
+#pragma comment(lib, "dwrite.lib")
+
 using namespace std;
 using namespace DirectX;
 
@@ -88,7 +103,9 @@ using namespace GameMath;
 #include "Framework/Utility/Xml.h"
 #include "Framework/Utility/Utility.h"
 #include "Framework/Utility/Audio.h"
+#include "Framework/Utility/Font.h"
 #include "Framework/Utility/DataManager.h"
+#include "Framework/Utility/ZOder.h"
 
 using namespace Utility;
 
@@ -118,8 +135,6 @@ using namespace Utility;
 #include "Framework/Environment/Camera.h"
 #include "Framework/Environment/Environment.h"
 
-#include "Algorithm/DNode.h"
-#include "Algorithm/Dijkstra.h"
 #include "Algorithm/Node.h"
 #include "Algorithm/Heap.h"
 #include "Algorithm/AStar.h"
@@ -137,16 +152,41 @@ using namespace Utility;
 #include "Objects/Basic/IButton.h"
 #include "Objects/Basic/UpDownButton.h"
 #include "Objects/Basic/InstancingTileMap.h"
+#include "Objects/Basic/ImageFont.h"
 
 #include "Objects/Game/Tile.h"
 #include "Objects/Game/TileMap.h"
-#include "Objects/Game/GameTileMap.h"
-#include "Objects/Game/Tank.h"
+#include "Objects/Game/TilePallet.h"
 
+#include "Objects/Diablo/Character/Character.h"
+
+#include "Objects/Diablo/Map/InstancingMap.h"
+#include "Objects/Diablo/UI/MiniMap.h"
+#include "Objects/Diablo/Skill/Skill.h"
+#include "Objects/Diablo/Skill/IceBolt.h"
+#include "Objects/Diablo/Skill/IceOrb.h"
+#include "Objects/Diablo/Skill/FireBall.h"
+#include "Objects/Diablo/Skill/Teleport.h"
+#include "Objects/Diablo/Skill/Fanaticism.h"
+#include "Objects/Diablo/Skill/fireStomp.h"
+#include "Objects/Diablo/Skill/DiabloLightening.h"
+#include "Objects/Diablo/System/SkillManager.h"
+#include "Objects/Diablo/UI/Item.h"
+#include "Objects/Diablo/UI/Equipment.h"
+#include "Objects/Diablo/UI/Consumable.h"
+#include "Objects/Diablo/System/ItemManager.h"
+#include "Objects/Diablo/UI/Inventory.h"
+#include "Objects/Diablo/UI/VerticalProgressBar.h"
+#include "Objects/Diablo/UI/HorizentalProgressBar.h"
+#include "Objects/Diablo/UI/Converter.h"
 #include "Objects/Diablo/UI/UIManager.h"
 #include "Objects/Diablo/UI/Cursor.h"
-#include "Objects/Diablo/Character/Character.h"
+
+#include "Objects/Diablo/Character/Cain.h"
 #include "Objects/Diablo/Character/Playable.h"
+#include "Objects/Diablo/Character/Monster.h"
+#include "Objects/Diablo/Character/Diablo.h"
+#include "Objects/Diablo/System/MonsterManager.h"
 
 //Scene
 #include "Scenes/Scene.h"

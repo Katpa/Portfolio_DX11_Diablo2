@@ -7,5 +7,6 @@ public:
 	~GameObject();
 
 	virtual void Render();
-	virtual float GetDepth() { return localPosition.y; }
+	virtual float GetDepth() { return GlobalPosition().y; }
+	virtual float GetPosX() { return GlobalPosition().x; }
 };

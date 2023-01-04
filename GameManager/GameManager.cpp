@@ -1,19 +1,14 @@
 #include "Framework.h"
 
-#include "Scenes/TextureScene.h"
-#include "Scenes/TileScene.h"
-#include "Scenes/TankScene.h"
+#include "Scenes/MapToolScene.h"
 #include "Scenes/DiabloScene.h"
-#include "Scenes/TestScene.h"
 
 GameManager::GameManager()
 {
 	Create();
 
-	//scene = new TileScene();
-	//scene = new TankScene();
-	//scene = new DiabloScene();
-	scene = new TestScene();
+	//scene = new MapToolScene();
+	scene = new DiabloScene();
 }
 
 GameManager::~GameManager()
@@ -37,40 +32,42 @@ void GameManager::Update()
 
 void GameManager::Render()
 {
-	renderTime += DELTA;
-	
-	if (renderTime > renderDelayTime)
+	renderFrame += DELTA;
+
+	if (renderFrame > renderDelay)
 	{
-		renderTime -= renderDelayTime;
+		renderFrame -= renderDelay;
 
-		{
-			scene->PreRender();
+		scene->PreRender();
 
-			Device::Get()->Clear();
+		Device::Get()->Clear();
 
-			ImGui_ImplDX11_NewFrame();
-			ImGui_ImplWin32_NewFrame();
-			ImGui::NewFrame();
+		ImGui_ImplDX11_NewFrame();
+		ImGui_ImplWin32_NewFrame();
+		ImGui::NewFrame();
 
-			string fps = "FPS : " + to_string(Timer::Get()->GetFPS());
-			ImGui::Text(fps.c_str());
+		Font::Get()->GetDC()->BeginDraw();
 
-			Device::Get()->SetRenderTarget();
-			Environment::Get()->SetViewPort();
-			Environment::Get()->SetOrtographic();
+		string fps = "FPS : " + to_string(Timer::Get()->GetFPS());
+		Font::Get()->RenderText(fps, "default", Vector2(80, WIN_HEIGHT - 20));
 
-			scene->Render();
-			FX->Render();
+		Device::Get()->SetRenderTarget();
+		Environment::Get()->SetViewPort();
+		Environment::Get()->SetOrtographic();
 
-			CAM->RenderUI();
-			Environment::Get()->SetUIView();
-			scene->PostRender();
+		scene->Render();
+		FX->Render();
 
-			ImGui::Render();
-			ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
+		//CAM->RenderUI();
+		Environment::Get()->SetUIView();
+		scene->PostRender();
 
-			Device::Get()->Present();
-		}
+		ImGui::Render();
+		ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
+
+		Font::Get()->GetDC()->EndDraw();
+
+		Device::Get()->Present();
 	}
 }
 
@@ -83,6 +80,11 @@ void GameManager::Create()
 	EffectManager::Get();
 	Audio::Get();
 	DataManager::Get();
+	ItemManager::Get();
+	SkillManager::Get();
+	MonsterManager::Get();
+	
+	Font::Get()->Add("default", L"kodia");
 
 	ImGui::CreateContext();
 	ImGui::StyleColorsDark();
@@ -100,6 +102,10 @@ void GameManager::Delete()
 	EffectManager::Delete();
 	Audio::Delete();
 	DataManager::Delete();
+	ItemManager::Delete();
+	Font::Delete();
+	SkillManager::Delete();
+	MonsterManager::Delete();
 
 	Texture::Delete();
 	Shader::Delete();

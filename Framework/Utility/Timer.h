@@ -24,7 +24,7 @@ public:
     void SetLockFPS(float lockFPS) { this->lockFPS = lockFPS; }
 
     int GetFPS() { return frameRate; }
-    float GetElapsedTime() { return timeElapsed; }
+    float GetElapsedTime() { return timeElapsed > 0.01f ? 0.01f : timeElapsed; }
 
 private:
     static Timer* instance;

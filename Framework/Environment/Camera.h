@@ -9,6 +9,8 @@ public:
 	void Update();
 	void RenderUI();
 
+	void CameraShakeOn();
+
 	void SetView();
 
 	void SetLeftBottom(float left, float bottom) { leftBottom = { left, bottom }; }
@@ -25,13 +27,15 @@ public:
 private:
 	void FreeMode();
 	void FollowMode();
+
+	void CameraShake();
 	
 	void FixPosition(Vector2& position);
 private:
 	MatrixBuffer* viewBuffer;
 	Matrix invView;
 
-	float speed = 200;
+	float speed = 800;
 
 	Vector2 leftBottom;
 	Vector2 rightTop = { WIN_WIDTH, WIN_HEIGHT };
@@ -39,4 +43,11 @@ private:
 	Transform* target = nullptr;
 
 	Vector2 targetOffset = { CENTER_X, CENTER_Y };
+
+	bool isShake = false;
+	Vector2 shakeLimit = {100, 13};
+	Vector2 additionalCameraPos = {};
+	Vector2 shakeSpeed = {4800, 3300};
+	float shakeTime = 0;
+
 };

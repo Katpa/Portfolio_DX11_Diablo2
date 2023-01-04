@@ -4,7 +4,7 @@ class AStar //A*
 {
 public:
 	AStar() {};
-	AStar(class GameTileMap* map);
+	AStar(class InstancingMap* map);
 	~AStar();
 
 	void Update();
@@ -14,6 +14,8 @@ public:
 
 	void GetPath(IN int start,IN int end, OUT vector<Vector2>& path);
 	void Position(float x, float y);
+
+	Vector2 FindWarpPos(Vector2 pos);
 
 protected:
 	void Reset();

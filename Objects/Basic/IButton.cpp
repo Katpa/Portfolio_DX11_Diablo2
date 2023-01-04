@@ -1,5 +1,12 @@
 #include "Framework.h"
 
+IButton::IButton(wstring file, Vector2 size)
+	:Isometric(file)
+{
+	collider = new IsometricCollider(size);
+	collider->SetParent(this);
+}
+
 IButton::IButton(wstring file)
 	:Isometric(file)
 {
@@ -21,6 +28,8 @@ IButton::~IButton()
 
 void IButton::Update(bool isDebugMode)
 {
+	if (this == nullptr) return;
+
 	if (isDebugMode)
 	{
 		if (collider->IsPointCollision(mousePos))
@@ -70,10 +79,10 @@ void IButton::Update(bool isDebugMode)
 	collider->UpdateWorld();
 }
 
-void IButton::Render(bool isDebugMode)
+void IButton::Render()
 {
 	Isometric::Render();
 
-	if(isDebugMode)
-		collider->Render();
+	//if(isDebugMode)
+	//	collider->Render();
 }
